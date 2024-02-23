@@ -21,21 +21,21 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item me-3 item">
-                        <select class="form-select border-0 bg-secondary text-light" aria-label="Default select example ">
+                        <select onchange="fnYear(value)" class="form-select border-0 bg-secondary text-light" aria-label="Default select example ">
                             <option selected>Year</option>
                             <option value="new">new</option>
                             <option value="old">old</option>
                           </select>
                         </li>
                         <li class="nav-item me-3 item">
-                            <select class="form-select border-0 bg-secondary text-light" aria-label="Default select example">
+                            <select onchange="fnRenting(value)" class="form-select border-0 bg-secondary text-light" aria-label="Default select example">
                                 <option selected>Reyting</option>
                                 <option value="min">min</option>
                                 <option value="max">max</option>
                               </select>
                             </li>
                             <li class="nav-item me-3 item">
-                                <select class="form-select border-0 bg-secondary text-light" aria-label="Default select example">
+                                <select onchange="fnCategory(value)" class="sel__category form-select border-0 bg-secondary text-light" aria-label="Default select example">
                                     <option selected>Category</option>
                                     <option value="family">family</option>
                                     <option value="action">action</option>
