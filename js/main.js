@@ -14,7 +14,7 @@ function fnRender(data){
     <div class="card" style="width: 18rem;">
                     <img src="https://i.ytimg.com/vi/${item.ytid}/hqdefault.jpg?" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">${item.Title.toString().slice(0,20)}</h5>
+                      <h5 class="card-title d-flex align-itams-center justify-content-between">${item.Title.toString().slice(0,20)} <i onclick="fnLoveMovie('${item.ytid}')" class="bi bi-heart"></i></h5>
                       <p class="card-text">${item.Categories}</p>
                       <p class="card-text">${item.movie_year}</p>
                       <h2 class="card-text">${item.imdb_rating}</h2>
@@ -62,4 +62,21 @@ arrCategory.forEach(item=>{
 function fnCategory(value){
   console.log(value);
   fnRender(partMovies.filter((item)=> item.Categories == value));
+}
+
+
+function movieSearch(e){
+  e.preventDefault()  
+  let mov = e.target.mov.value
+  fnRender(partMovies.filter((i)=>
+  i.Title.toString().toLowerCase().includes(mov.toLowerCase()) &&
+  i.Title.toString().toLowerCase()[0] == mov.toLowerCase()[0]
+  ));
+}
+
+let intialLocalData = []
+function fnLoveMovie(id){
+  partMovies.find((item)=> item.ytid == id)
+  intialLocalData.push(partMovies.find((item)=> item.ytid == id))
+  window.localStorage.setItem('localMovie', JSON.stringify(intialLocalData))
 }
